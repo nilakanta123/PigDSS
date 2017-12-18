@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    
+
+	<ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab1">For Farmer</a></li>
+        <li><a data-toggle="tab" href="#tab2">For Vatenary Expert</a></li>
+    </ul>
+
+	<div class="tab-content">
+        <div id="tab1" class="tab-pane fade in active">
+        	<div class="row">
+        		<div class="col-sm-6 col-md-6 col-lg-7">
+					
+				   	<!-- Search Nearest Vatenary Hospital -->
+				      <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            Choose location to find the nearest Vet-Hospital
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+
+					       <!--  {{ form.non_field_errors }} -->
+					        <div class="row">       
+					        	<div class="col-lg-6 col-sm-12">
+					        		<form method="POST">
+					        		{% csrf_token %}
+						            <div class="dropdown">            
+						              	<select name="address" id="id_address">
+						              		<option value="Guwahati, Maj Gaon">Guwahati, Maj Gaon</option>
+						              		<option value="Guwahati, Geetanagar">Guwahati, Geetanagar</option>
+						              		<option value="Guwahati, Beltola">Guwahati, Beltola</option>
+											<option value="Sonapur">Sonapur</option>
+											<option value="Jagiroad">Jagiroad</option>
+											<option value="Dhubri">Dhubri</option>
+											<option value="Nagaon">Nagaon</option>
+						              	</select>
+						            </div>
+						        </form>
+
+					        	</div>
+					          	
+					        </div>
+
+					        <div class="row">
+					        <div class="col-lg-12 col-sm-12">
+					        	<div class="portlet-body">
+						        	<h4 id="hospital_name"></h4>
+						        	Address :- <h5 id="hospital_address"></h5>
+						        	Phone No :- <h5 id="hospital_phone"></h5>
+						        	State :- <h5 id="hospital_state"></h5>
+
+						        </div> <!-- /.portlet-body -->
+							</div>
+							</div>
+						        
+				        </div> <!-- /.portlet-body -->
+
+				      </div> <!-- /.portlet -->
+
+				      <!-- You may Contact -->
+				      <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            Or you can contact
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				          <ol>
+				          	{% for item in cont %}
+				          	<li>{{item}}</li>
+				          	{% endfor %}
+				          </ol>
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+
+				    
+
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-5">
+				       <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            What you need to do
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				          <ol>
+				          	{% for item in steps %}
+				          	<li>{{item}}</li>
+				          	{% endfor %}
+				          </ol>
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+				</div>
+
+        	</div>
+        </div>
+
+        <div id="tab2" class="tab-pane fade">
+
+        	<!-- Disease Name  -->
+			 <div class="icon-stat">
+			 	<div class="portlet portlet-boxed">
+				 	<div class="portlet-header">
+			          <h4 class="portlet-title">
+			            Diseases with similar Symptoms is
+			          </h4>
+			        </div> <!-- /.portlet-header -->
+			    </div>
+
+			    <div class="row text-center">
+			        <h3>{{disease}}</h3>
+			    </div>
+			    <div class="icon-stat-footer">
+			        <i class="fa fa-clock-o"></i>{{desc}}
+			    </div>
+			</div>
+
+
+        	<div class="row">
+        		<div class="col-sm-6 col-md-6 col-lg-7">
+					
+				    <!-- Decision from Pics -->
+				       <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            Your selected image look like..
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				        	<div class="row">
+				        		<ul>
+					        		{% for item in resb %}
+					          			<li>{{item}}</li>
+					          		{% endfor %}
+				          		</ul>
+				        	</div>
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+
+				   	<!-- Search Nearest Vatenary Hospital -->
+				       <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            Clinical and Laboratory steps
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				        	<h5>Type of samples to be collected :</h5>
+				        	<ol>
+				        		{% for item in samples %}
+					          		<li>{{item}}</li>
+					          	{% endfor %}
+				        	</ol>
+				        	<h5>Laboratory tests to be performed :</h5>
+				        	<ol>
+				        		{% for item in tests %}
+					          		<li>{{item}}</li>
+					          	{% endfor %}
+				        	</ol>
+
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+				      
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-5">
+				       <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            How To Diagnose
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				          <ol>
+				          	{% for item in how_to_diagnose %}
+				          		<li>{{item}}</li>
+				          	{% endfor %}
+				          </ol>
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+
+				      <div class="portlet portlet-boxed">
+				        <div class="portlet-header">
+				          <h4 class="portlet-title">
+				            Contact other Experts
+				          </h4>
+				        </div> <!-- /.portlet-header -->
+
+				        <div class="portlet-body">
+				          <ol>
+				          	{% for item in cont %}
+				          	<li>{{item}}</li>
+				          	{% endfor %}
+				          </ol>
+				        </div> <!-- /.portlet-body -->
+				      </div> <!-- /.portlet -->
+				</div>
+
+        	</div>
+        </div>
+    </div>
+{% endblock content %}
+
+

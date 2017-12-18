@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap core CSS -->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+         <!-- Google Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300,700">
+
+        <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="{% static  'app1/css/bootstrap.css' %}">
+         <link rel="stylesheet" href="{% static  'app1/css/bootstrap-multiselect.css' %}">
+        <!-- App CSS -->
+        <link rel="stylesheet" href="{% static 'app1/css/mystyle.css' %}">
+       <!--  <style>
+          @font-face {
+            font-family: 'Oswald';
+            src: url('{% static 'fonts/oswald.ttf' %}');
+            src: local('{% static 'fonts/oswald.ttf' %}');
+          }
+        </style> -->
+    
+        <title>Diagonise Pig Disease</title>
+    </head>
+    <body>
+
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainMenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a href="#" class="navbar-brand">DIAG-PIG</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+                        <li><a href="#disease_info">Disease Informations</a>
+                        <li><a href="#survey">Survey</a></li>
+                        <li><a href="#sponsor">Sponsor</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div style="background-color: #7650AF; background: linear-gradient(to left,#2B1E3D, #7650AF); color: white; padding-top: 50px; "  class="jumbotron"></div>
+
+        <!-- start -->
+        <div class="container">
+           {% block content %} {% endblock content %}
+        </div> <!-- /.container -->
+
+    <script src="{% static 'app1/js/jquery.min.js' %}"></script>
+    <script src="{% static 'app1/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app1/js/bootstrap-multiselect.js' %}"></script>
+    <script src="{% static 'app1/js/javascript.js' %}"></script>
+    </body>
+
+</html>
+

@@ -1,0 +1,405 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- <h2 class="text-secondary">Please choose the similar conditions or symptoms with your animal.</h2> -->
+
+    <form method="POST" >
+    {% csrf_token %}
+
+
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab1">_____</a></li>
+        <li><a data-toggle="tab" href="#tab2">_____</a></li>
+        <li><a data-toggle="tab" href="#tab3">_____</a></li>
+        <li><a data-toggle="tab" href="#tab4">_____</a></li>
+      </ul>
+
+
+      <div class="tab-content">
+          <!-- Tab 1 -->
+          <div id="tab1" class="tab-pane fade in active">
+              <!-- Fever -->
+              <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does the animal have high temperature or fever?
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-1" checked="checked"  type="radio" value=0>No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-1" type="radio" value=1>Yes
+                    </label>
+                  </div>
+
+                </div> <!-- /.portlet-body -->
+              </div> 
+              <!-- /.portlet -->
+
+               <!-- Hyperemia -->
+              <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does the animal have sign of Hyperemia?
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-2" checked="checked" type="radio" value=0>No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-2" type="radio" value=1>Yes
+                    </label>
+                  </div>
+
+                </div> <!-- /.portlet-body -->
+              </div> 
+              <!-- /.portlet -->
+
+              <!-- Lesions -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Is Lesions seen in the animal? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-3" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-3" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Conjunctivitis -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does the animal shows sign of Conjunctivitis or pink eye? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-4" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-4" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+      
+
+              <a class="btn btn-primary btnNext" >Next</a>
+
+          </div>
+
+          <!-- Tab 2 -->
+          <div id="tab2" class="tab-pane fade">
+
+              <!-- Respiratory distress -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does the animal shows sign of Respiratory distress? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-5" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-5" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Skin Nodule -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Is Skin Nodule present in the animal? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-6" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-6" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Constipation -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does animal have hardened faeces or Constipation? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-7" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-7" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Diarrhoea -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does animal have Diarrhea? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-8" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-8" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+              
+              <a class="btn btn-primary btnPrevious" >Previous</a>
+              <a class="btn btn-primary btnNext" >Next</a>
+
+          </div>
+
+          <!-- Tab 3 -->
+          <div id="tab3" class="tab-pane fade">
+              
+              <!-- Central Nervous System -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does animal have abnormal behavior or abnormal mental status? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-9" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-9" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Wasting -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does animal recently become weak and wasting?
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-10" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-10" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->   
+
+              <!-- Abortion -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Does animal got Abortion? 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input name="radio-set-11" checked="checked" type="radio" value=0>
+                      No
+                    </label>
+
+                    <label class="radio-inline">
+                      <input name="radio-set-11" type="radio" value=1>
+                      Yes
+                    </label>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+              <!-- Other Symptom -->
+               <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Are there any other symptom? Please provide. 
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                   
+                  <div class="col-lg-6 col-sm-12">
+                      <div class="dropdown">
+                        {{form.other_symptoms}}
+                      </div>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->           
+
+              <a class="btn btn-primary btnPrevious" >Previous</a>
+              <a class="btn btn-primary btnNext" >Next</a>
+
+          </div>
+
+          <!-- Tab 4 -->
+          <div id="tab4" class="tab-pane fade">
+              <!-- Pics -->
+              <div class="portlet portlet-boxed">
+                <div class="portlet-header">
+                  <h4 class="portlet-title">
+                    Select similar sign visible in the animal.
+                  </h4>
+                </div> <!-- /.portlet-header -->
+
+                <div class="portlet-body">
+                  {% load static %}
+                  <div class="row>">  
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/csf1.jpg" %}" class="img-responsive img-rounded img-check" alt="img0">
+                        <input type="checkbox" name="chk0" id="pig-img" value=1 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/csf2.jpg" %}" class="img-responsive img-rounded img-check" alt="img1">
+                        <input type="checkbox" name="chk1" id="pig-img" value=1 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/pcv1.jpg" %}" class="img-responsive img-rounded img-check" alt="img2">
+                        <input type="checkbox" name="chk2" id="pig-img" value=2 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                  </div>
+                  <div class="row>">
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/pcv2.jpg" %}" class="img-responsive img-rounded img-check" alt="img3">
+                        <input type="checkbox" name="chk3" id="pig-img" value=2 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/prrsv1.jpg" %}" class="img-responsive img-rounded img-check" alt="img4">
+                        <input type="checkbox" name="chk4" id="pig-img" value=4 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/prrsv2.jpg" %}" class="img-responsive img-rounded img-check" alt="img5">
+                        <input type="checkbox" name="chk5" id="pig-img" value=4 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                  </div>
+                  <div class="row>">  
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/sp1.jpg" %}" class="img-responsive img-rounded img-check" alt="img6">
+                        <input type="checkbox" name="chk6" id="pig-img" value=3 class="hidden" autocomplete="off">
+                      </label>  
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/sp2.jpg" %}" class="img-responsive img-rounded img-check" alt="img7">
+                        <input type="checkbox" name="chk7" id="pig-img" value=3 class="hidden" autocomplete="off">
+                      </label> 
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4 img-frame">
+                      <label class="btn btn-primary">
+                        <img src="{% static "app1/img/sp3.jpg" %}" class="img-responsive img-rounded img-check" alt="img8">
+                        <input type="checkbox" name="chk8" id="pig-img" value=3 class="hidden" autocomplete="off">
+                      </label>  
+                    </div>
+                  </div>
+                </div> <!-- /.portlet-body -->
+              </div> <!-- /.portlet -->
+
+
+              <div class="icon-stat">
+                  <div class="row text-center">
+                      <a class="btn btn-primary btnPrevious" >Previous</a>
+                      <button id="button_submit" type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                  <div class="icon-stat-footer">
+                      <i class="fa fa-clock-o"></i>Please Click the Submit button to proceed.
+                  </div>
+              </div>  
+          </div>
+
+      </div>
+  
+          
+    </form>
+{% endblock content %}
